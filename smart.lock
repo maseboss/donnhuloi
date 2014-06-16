@@ -1,0 +1,29 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "iron-router": {
+        "version": "0.6.0"
+      },
+      "mongo-counter": {},
+      "moment": {}
+    },
+    "packages": {
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.6.0",
+        "commit": "c63e92d24c8210e2304ff5fed1b5c463394aeaf6"
+      },
+      "mongo-counter": {
+        "git": "https://github.com/awwx/meteor-mongo-counter.git",
+        "tag": "v1.1.0",
+        "commit": "9a0710543cec7c192e38d5acc54cf3b0a9fbcb20"
+      },
+      "moment": {
+        "git": "https://github.com/acreeger/meteor-moment.git",
+        "tag": "v2.6.0",
+        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+      }
+    }
+  }
+}
