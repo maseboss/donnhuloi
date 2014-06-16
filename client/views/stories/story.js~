@@ -1,0 +1,36 @@
+/* ---------------------------------------------------- +/
+
+## Story ##
+
+Code related to the story template
+
+/+ ---------------------------------------------------- */
+
+Template.story.created = function () {
+  //
+};
+
+Template.story.helpers({
+  
+  myHelper: function () {
+    //
+  }
+
+});
+
+Template.story.rendered = function () {
+  //
+};
+
+Template.story.events({
+
+  'click .delete': function(e, instance){
+    var story = this;
+    e.preventDefault();
+    Meteor.call('removeStory', story, function(error, result){
+      alert('Story deleted.');
+      Router.go('/stories');
+    });
+  }
+
+});

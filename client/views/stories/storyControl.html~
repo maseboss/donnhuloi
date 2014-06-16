@@ -1,0 +1,28 @@
+<template name="storyControl">
+<div class="post article">
+      <p>
+      	<a href="{{pathFor 'story'}}" class="fmllink">{{body}}</a>
+      </p>
+
+      <div class="date">
+	<div class="left_part">
+		<a href="{{pathFor 'story'}}" class="jtip">#{{number}}</a>
+	</div>
+	<div class="right_part">
+		<p>
+			<span class="dyn-vote-j">
+				{{{validated}}} (<span class="dyn-vote-j-data">{{countValidated}}</span>)
+			</span>
+			<span class="dyn-vote-t">
+				{{{deserved}}} (<span class="dyn-vote-j-data">{{countDeserved}}</span>)
+			</span>
+		</p>
+		<p>
+			{{formatDate createdDate}} - <a class="liencat" href="{{pathFor 'stories' category=category_id page=1}}}">#{{category_id}}</a>
+			by {{ owner.username }}
+		</p>
+	</div>
+      </div>
+</div>
+</template>
+

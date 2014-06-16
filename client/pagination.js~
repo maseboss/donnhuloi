@@ -1,0 +1,3 @@
+Pages = Meteor.Paginate("paginatedStories", {router : "iron-router"});
+Pages.Collection = Stories;
+PaginatedStories = Pages.Collection;

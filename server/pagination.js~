@@ -1,0 +1,2 @@
+Pages = Meteor.Paginate("paginatedStories", {router : "iron-router"});
+

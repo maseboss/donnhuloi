@@ -1,0 +1,40 @@
+<template name="layout">
+
+  {{> header}}
+  <div id="content">
+  {{yield}}
+  <div class="droite">
+    <div class="part">
+     <div class="box" id="categories">
+       <h4>Categories</h4>
+	<ul class="cf">
+		<li id="love">
+			<h3><a href="/stories/Love">Love</h3>
+		</li>
+		<li id="pets">
+			<h3><a href="/stories/Pets">Pets</h3>
+		</li>
+		<li id="money">
+			<h3><a href="/stories/Money">Money</h3>
+		</li>
+		<li id="work">
+			<h3><a href="/stories/Work">Work</h3>
+		</li>
+		<li id="love">
+			<h3><a href="/stories/Children">Children</h3>
+		</li>
+		<li id="love">
+			<h3><a href="/stories/Health">Health</h3>
+		</li>
+		<li id="love">
+			<h3><a href="/stories/Others">Others</h3>
+		</li>
+	</ul>
+     </div>
+    </div>
+  </div>
+  </div>
+  
+  {{> footer}}
+
+</template>

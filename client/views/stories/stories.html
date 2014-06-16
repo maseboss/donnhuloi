@@ -1,0 +1,9 @@
+<template name="stories">
+    <div class="wrapper">
+    {{#each this.stories}}
+    {{> storyControl this }}
+    {{/each}}
+
+{{{pagination}}}
+    </div>
+</template>

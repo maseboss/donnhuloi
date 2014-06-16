@@ -1,0 +1,4 @@
+<template name="paginatedStories">
+    {{> pages}}
+    {{> pagesNav}} 
+</template>

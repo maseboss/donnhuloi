@@ -1,0 +1,6 @@
+<template name="story">
+  <a href="{{pathFor 'stories'}}">← Back</a>
+  {{#with story}}
+    {{>storyControl this}}
+  {{/with}}
+</template>
