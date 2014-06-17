@@ -18,8 +18,8 @@
 			</span>
 		</p>
 		<p>
-			{{formatDate createdDate}} - <a class="liencat" href="{{pathFor 'stories' category=category_id page=1}}}">#{{category_id}}</a>
-			by {{ owner.username }}
+			{{formatDate createdDate}} - <a class="liencat" href="/stories/{{{category_id}}}">#{{category_id}}</a>
+			by {{ username }}
 		</p>
 	</div>
       </div>

@@ -3,7 +3,7 @@
     {{#each this.stories}}
     {{> storyControl this }}
     {{/each}}
-{{this.count}}
+
 {{{pagination}}}
     </div>
 </template>

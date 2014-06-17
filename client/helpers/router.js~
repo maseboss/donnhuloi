@@ -47,14 +47,21 @@ Router.map(function() {
     waitOn: function () {
       var perPage = 10;
       var filter = {};
+      var sort = {createdDate:-1};
+
+      if(this.params.category != null)
+      {
+	if(this.params.category == 'top')
+		sort = { countValidated:-1 , createdDate:-1 }
+	else
+		filter = {category_id : this.params.category};
+      }
+
       var options = {
 	   sort: {createdDate:-1},
            limit: perPage,
            skip:  perPage * Session.get('page') - perPage
          }
-
-      if(this.params.category != null)
-	filter = {category_id : this.params.category};
 
       return [Meteor.subscribe('allStories', filter, options),
               Meteor.subscribe('allStoriesCount', filter) ];
@@ -79,6 +86,17 @@ Router.map(function() {
     }
   });
 
+  this.route('storyForm', {
+    waitOn: function () {
+      return Meteor.subscribe('categories');
+    },
+    data: function () {
+      return {
+        categories: Categories.find()
+      }
+    }
+
+  });
 
   // Pages
 

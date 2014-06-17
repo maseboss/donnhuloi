@@ -24,3 +24,11 @@ Meteor.publish('allStoriesCount', function(params) {
 Meteor.publish('singleStory', function(id) {
   return Stories.find(id);
 });
+
+//Publish categories
+
+Meteor.publish('categories', function() {
+  return Categories.find();
+});
+
+

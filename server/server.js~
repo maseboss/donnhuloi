@@ -1,0 +1,8 @@
+
+Meteor.methods({
+  getStoryCount: function () {
+	throw new Meteor.Error('getStoryCount')
+	return incrementCounter("storyNumber");
+  }
+});
+

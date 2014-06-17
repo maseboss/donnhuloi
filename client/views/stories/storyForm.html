@@ -1,29 +1,37 @@
 <template name="storyForm">
+
 <div class="wrapper">
+    
+<div id="submit" class="post" style="overflow: hidden; display: block;">
+ <h3> Post your story </h3>
+    <form class="submit_form">
     <fieldset>
-    <legend>Post a story</legend>
-    <form>
-        <div>
-            <label>
+
+        <div class="input_auteur control-group">
                 Username:
-                <input id="username" />
-            </label>
+	        <input id="username" name="username" minlength="6" maxlength="20" data-validation-maxlength-message="Name too long" data-validation-minlength-message="Name too short" required/>
+		<p class="help-block"></p>
         </div>
-        <div>
-            <label>
+        <div class="input_cat">
                 Category:
-                <input id="category" />
-            </label>
+	<select id="cat" name="cat">
+	  {{#each categories}}
+	    <option value="{{_id}}">{{_id}}</option>
+	  {{/each}}
+	</select>
+
         </div>
-        <div>
-            <label>
-                <textarea id="text" />
-            </label>
+	<div class="control-group">
+		<textarea id="update" name="content" rows="6" minlength="50" maxlength="300" data-validation-maxlength-message="Story too long" data-validation-minlength-message="Story too short" required/>
+		<p class="help-block"></p>
+	</div>
+        <div class="ok">
+            <input type="submit" name="ok" value="Post Story" />
         </div>
-        <div>
-            <input type="submit" value="Post Story" />
-        </div>
-    </form>
     </fieldset>
+    </form>
+
 </div>
+</div>
+
 </template>

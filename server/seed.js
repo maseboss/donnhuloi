@@ -49,15 +49,12 @@ if ( Categories.find().count() === 0) {
     password: "Susu"
   });
 
-
   // counters
   setCounter("storyNumber",0);
 
 function insertNewStory(story){
 
-  Stories.insert(story, {w: 1}, function(err, story){
-    console.log("New story added as "+ story._id);
-  });
+  Stories.insert(story);
 }
 
   insertNewStory({
@@ -68,7 +65,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'mathieu@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'mathieu@test.com' }).username
   });
 
   insertNewStory({
@@ -79,7 +76,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'mathieu@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'mathieu@test.com' }).username
   });
 
   insertNewStory({
@@ -90,7 +87,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
   insertNewStory({
@@ -101,7 +98,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
   insertNewStory({
@@ -112,7 +109,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
   insertNewStory({
@@ -123,7 +120,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
   insertNewStory({
@@ -134,7 +131,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
   insertNewStory({
@@ -145,7 +142,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
   insertNewStory({
@@ -156,7 +153,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
   insertNewStory({
@@ -167,7 +164,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
   insertNewStory({
@@ -178,7 +175,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
   insertNewStory({
@@ -189,7 +186,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
   insertNewStory({
@@ -200,7 +197,7 @@ function insertNewStory(story){
     published : true,
     countValidated: 0,
     countDeserved: 0,
-    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' })
+    owner : Meteor.users.findOne({ "emails.address" : 'ngan@test.com' }).username
   });
 
 

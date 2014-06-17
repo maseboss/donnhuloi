@@ -23,18 +23,3 @@ Stories.allow({
   }
 });
 
-// Methods
-
-Meteor.methods({
-  createStory: function(story){
-      Stories.insert(story);
-  },
-  removeStory: function(story){
-    if(can.removeStory(Meteor.user(), story)){
-      Stories.remove(story._id);
-    }else{
-      throw new Meteor.Error(403, 'You do not have the rights to delete this item.')
-    }
-  }
-});
-

@@ -3,6 +3,8 @@
   "packages": {
     "iron-router": "0.6.0",
     "mongo-counter": {},
-    "moment": {}
+    "moment": {},
+    "jqBootstrapValidation": {},
+    "bootstrap-3": {}
   }
 }
