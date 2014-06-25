@@ -1,20 +1,20 @@
 <template name="header">
 <div id="background">
   <div id="topbar">
+  <div id="contenttop">
      <div id="title">
         <a href="{{pathFor 'homepage'}}" accesskey="1" class="toplogo_fr"></a>		
      </div>
     <div class="menu">
-      <h1 class=""><a href="{{pathFor 'stories'}}">Stories</a></h1>
-      <h1 class=""><a href="/stories/top">Top</a></h1>
+      <h1 class=""><a href="/stories/top">Top stories</a></h1>
       <h1 class=""><a href="{{pathFor 'storyForm'}}">Post a story</a></h1>
       {{#if isLoggedIn}}
-        <h1 class=""><a href="/">Log Out</a></h1>
+        <h1 class=""><a href="/" class="log-out">Log Out</a></h1>
       {{else}} 
-        <h1 class=""><a href="{{pathFor 'signup'}}">Sign Up</a></h1>
         <h1 class=""><a href="{{pathFor 'login'}}">Log In</a></h1>   
       {{/if}}
     </div>
+  </div>
   </div>
   <hr/>
   <div class="messages">

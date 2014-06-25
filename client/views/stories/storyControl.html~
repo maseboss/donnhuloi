@@ -19,7 +19,7 @@
 		</p>
 		<p>
 			{{formatDate createdDate}} - <a class="liencat" href="/stories/{{{category_id}}}">#{{category_id}}</a>
-			by {{ username }}
+			by {{ owner }}
 		</p>
 	</div>
       </div>

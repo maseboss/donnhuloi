@@ -6,14 +6,17 @@
  <h3> Post your story </h3>
     <form class="submit_form">
     <fieldset>
-
+	{{#if isLoggedIn}}
+	<div class="input_auteur">
+		Username: <input id="username" name="username" type="hidden" value="{{currentUser.username}}"> {{currentUser.username}}
+	</div>
+	{{else}} 
         <div class="input_auteur control-group">
-                <label for="username">Username:</label>
-		<div class="controls">          
-		        <input id="username" name="username" minlength="6" maxlength="20" data-validation-maxlength-message="Name too long" data-validation-minlength-message="Name too short" required/>
-			<p class="help-block"></p>
-		</div>
+                Username:
+	        <input id="username" name="username" minlength="6" maxlength="20" data-validation-maxlength-message="Name too long" data-validation-minlength-message="Name too short" required/>
+		<p class="help-block"></p>
         </div>
+	{{/if}}
         <div class="input_cat">
                 Category:
 	<select id="cat" name="cat">
@@ -21,13 +24,11 @@
 	    <option value="{{_id}}">{{_id}}</option>
 	  {{/each}}
 	</select>
-
+	
         </div>
 	<div class="control-group">
- 
 		<textarea id="update" name="content" rows="6" minlength="50" maxlength="300" data-validation-maxlength-message="Story too long" data-validation-minlength-message="Story too short" required/>
 		<p class="help-block"></p>
-
 	</div>
         <div class="ok">
             <input type="submit" name="ok" value="Post Story" />

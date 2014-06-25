@@ -11,11 +11,9 @@ Template.story.created = function () {
 };
 
 Template.story.helpers({
-  
-  myHelper: function () {
-    //
+    isLoggedIn: function () {
+    return !!Meteor.user();
   }
-
 });
 
 Template.story.rendered = function () {
@@ -24,13 +22,16 @@ Template.story.rendered = function () {
 
 Template.story.events({
 
-  'click .delete': function(e, instance){
-    var story = this;
-    e.preventDefault();
-    Meteor.call('removeStory', story, function(error, result){
-      alert('Story deleted.');
-      Router.go('/stories');
-    });
-  }
+  'submit': function (e, tmpl) {
 
+    var newComment = {
+	story_id : this.story._id,
+	username : Meteor.user().username,
+	createdDate : new Date(),
+	body : tmpl.find("#text").value
+    }
+
+    var id = Comments.insert(newComment);
+	alert(id);
+  }
 });

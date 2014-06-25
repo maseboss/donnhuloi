@@ -75,13 +75,15 @@ Router.map(function() {
   });
 
   this.route('story', {
-    path: '/story/:_id',
+    path: '/story/:number',
     waitOn: function () {
-      return Meteor.subscribe('singleStory', this.params._id);
+      return [Meteor.subscribe('singleStory', this.params.number),
+	      Meteor.subscribe('allComments', this.params.number)];
     },
     data: function () {
       return {
-        story: Stories.findOne(this.params._id)
+        story: Stories.findOne(),
+	comments: Comments.find()
       }
     }
   });

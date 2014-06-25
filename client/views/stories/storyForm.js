@@ -1,7 +1,13 @@
+Template.storyForm.helpers({
+  isLoggedIn: function () {
+    return !!Meteor.user();
+  }
+})
 
 Template.storyForm.rendered = function(){
         $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
     };
+
 
 Template.storyForm.events = {
     'submit': function (e, tmpl) {

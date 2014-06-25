@@ -1,6 +1,41 @@
 <template name="story">
-  <a href="{{pathFor 'stories'}}">← Back</a>
-  {{#with story}}
+<div class="wrapper">
+
+  {{#with this.story}}
     {{>storyControl this}}
   {{/with}}
+
+  <div class="post"><h3>Comments:</h3></div>
+
+  {{#each this.comments}}
+	<div class="post">
+		<p class="texte">{{body}}</p>
+		<div class="avatar_container">
+			<a href=""><img src="" title={{username}}>
+		</div>
+		<div class="userinfos">
+			<p>
+				{{formatDate createdDate}} by
+				<b><a href="/user/{{username}}">{{username}}</a></b>
+			</p>
+		</div>
+	</div>
+  {{/each}}
+
+  <div class="post">
+  {{#if isLoggedIn}}
+   	<form id="comment" method="post" class="cf">
+		<div class="champ" id="pseudo">
+			<strong>Username :</strong> 
+			{{currentUser.username}}
+		</div>
+		<textarea name="texte" id="text"></textarea>
+		<div class="ok"><input type="submit" value="Comment !" name="ok"/>
+	</form>
+  {{else}} 	
+   	<p>Signup or login to comment : <a href="{{pathFor 'signup'}}">Signup</a> , <a href="{{pathFor 'login'}}">Login</a></p>
+  {{/if}}
+  </div>
+
+</div>
 </template>

@@ -1,5 +1,4 @@
 <template name="signup">
-<div class="wrapper">
   <form>
     <div class="control-group">
       <label>Username</label>
@@ -17,5 +16,4 @@
       <input type="submit" class="button" value="Sign Up" />
     </div>  
   </form>
-</div>
 </template>

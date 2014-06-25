@@ -21,8 +21,8 @@ Meteor.publish('allStoriesCount', function(params) {
 
 // Publish a single story
 
-Meteor.publish('singleStory', function(id) {
-  return Stories.find(id);
+Meteor.publish('singleStory', function(number) {
+  return Stories.find({ number : parseInt(number)});
 });
 
 //Publish categories
@@ -31,21 +31,13 @@ Meteor.publish('categories', function() {
   return Categories.find();
 });
 
-// Methods
+// Publish Comments
 
-Meteor.methods({
-  createStory: function(story){
-      Stories.insert(story);
-  },
-  removeStory: function(story){
-    if(can.removeStory(Meteor.user(), story)){
-      Stories.remove(story._id);
-    }else{
-      throw new Meteor.Error(403, 'You do not have the rights to delete this item.')
-    }
-  },
-  getStoryCount: function () {
-	throw new Meteor.Error('getStoryCount')
-	return incrementCounter("storyNumber");
-  }
+Meteor.publish('allComments', function(number) {
+  var story = Stories.findOne({ number : parseInt(number)});
+  var comments = Comments.find({story_id : story._id});
+  console.log(comments.count());
+  return comments;
 });
+
+

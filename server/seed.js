@@ -37,14 +37,18 @@ if ( Categories.find().count() === 0) {
     _id: "Others"
   });
 
+  Categories.insert({
+    _id: "Sex"
+  });
+
   Accounts.createUser({
-    username: "Bui Thuy Ngan",
+    username: "BuiThuyNgan",
     email: "ngan@test.com",
     password: "Susu"
   });
 
   Accounts.createUser({
-    username: "Mathieu RIO",
+    username: "MathieuRIO",
     email: "mathieu@test.com",
     password: "Susu"
   });
@@ -54,12 +58,12 @@ if ( Categories.find().count() === 0) {
 
 function insertNewStory(story){
 
-  Stories.insert(story);
+  return Stories.insert(story);
 }
 
-  insertNewStory({
+  var storyId = insertNewStory({
     number : incrementCounter("storyNumber"),
-    body: "Hom nay, ..... DNL.",
+    body: "Hom nay,  with comments DNL.",
     createdDate : new Date(),
     category_id : "Love",
     published : true,
@@ -67,6 +71,15 @@ function insertNewStory(story){
     countDeserved: 0,
     owner : Meteor.users.findOne({ "emails.address" : 'mathieu@test.com' }).username
   });
+
+    var newComment = {
+	story_id : storyId,
+	username : 'MathieuRIO',
+	createdDate : new Date(),
+	body : 'test'
+    }
+
+    var id = Comments.insert(newComment);
 
   insertNewStory({
     number : incrementCounter("storyNumber"),

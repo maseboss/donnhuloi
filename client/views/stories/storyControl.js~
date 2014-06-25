@@ -1,16 +1,16 @@
 /* ---------------------------------------------------- +/
 
-## Stories ##
+## storyControl ##
 
-Code related to the stories template
+Code related to the storyControl template
 
 /+ ---------------------------------------------------- */
 
-Template.stories.created = function () {
+Template.storyControl.created = function () {
   //
 };
 
-Template.stories.helpers({
+Template.storyControl.helpers({
 
  validated: function() {
 
@@ -29,11 +29,11 @@ Template.stories.helpers({
 
 });
 
-Template.stories.rendered = function () {
+Template.storyControl.rendered = function () {
   //
 };
 
-Template.stories.events({
+Template.storyControl.events({
 
   'click .validateLink': function(e) {
     e.preventDefault();
@@ -46,5 +46,8 @@ Template.stories.events({
     Stories.update({_id: this._id}, {$inc: { countDeserved : 1} }, function(error) {console.log('error: ' + error);} );
     Session.set("D_" + this._id, true);
   }
+
+
+};
 
 });

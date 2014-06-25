@@ -21,14 +21,22 @@ Meteor.publish('allStoriesCount', function(params) {
 
 // Publish a single story
 
-Meteor.publish('singleStory', function(id) {
-  return Stories.find(id);
+Meteor.publish('singleStory', function(number) {
+  return Stories.find({ number : parseInt(number)});
 });
 
 //Publish categories
 
 Meteor.publish('categories', function() {
   return Categories.find();
+});
+
+// Publish Comments
+
+Meteor.publish('allComments', function(number) {
+  var story = Stories.findOne({ number : parseInt(number)});
+  var comments = Comments.find({story_id : story._id});
+  return comments;
 });
 
 
