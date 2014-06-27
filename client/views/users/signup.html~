@@ -1,19 +1,29 @@
 <template name="signup">
+<div class="wrapper">
+<div class="post">
+<h3>Create an account</h3> 
   <form>
+  <div class="form">
     <div class="control-group">
-      <label>Username</label>
-      <div class="controls"><input id="username" name="username" type="text" value="" /></div>
+      <label>Username (a-z, 0-9)</label>
+      <div class="controls"><input id="username" name="username" type="text" pattern="^[a-z0-9_.]+$" value="" required/></div>
+	<p class="help-block"></p>
     </div>
     <div class="control-group">
       <label>Email</label>
-      <div class="controls"><input id="email" name="email" type="text" value="" /></div>
+      <div class="controls"><input id="email" name="email" type="email" value="" required/></div>
+	<p class="help-block"></p>
     </div>
     <div class="control-group">
       <label>Password</label>
-      <div class="controls"><input id="password" name="password" type="password" value="" /></div>
+      <div class="controls"><input id="password" name="password" type="password" value="" required minlength="6"/></div>
+	<p class="help-block"></p>
     </div>
-    <div class="form-actions">
+    <div class="ok">
       <input type="submit" class="button" value="Sign Up" />
-    </div>  
+    </div>
+  </div> 
   </form>
+</div>
+</div>
 </template>

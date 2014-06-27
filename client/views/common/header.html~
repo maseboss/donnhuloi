@@ -7,11 +7,19 @@
      </div>
     <div class="menu">
       <h1 class=""><a href="/stories/top">Top stories</a></h1>
-      <h1 class=""><a href="{{pathFor 'storyForm'}}">Post a story</a></h1>
+      <h1 class="submit"><a href="{{pathFor 'storyForm'}}">Post a story</a></h1>
+      <h1 id="user" {{#if isLoggedIn}} class="green" {{/if}}><a class="t_user" href="{{pathFor 'login'}}"></a></h1>  
       {{#if isLoggedIn}}
-        <h1 class=""><a href="/">Log Out</a></h1>
-      {{else}} 
-        <h1 class=""><a href="{{pathFor 'login'}}">Log In</a></h1>   
+	<div class="submenu_container" id="user_submenu">
+        <div class="submenu">
+	<ul>
+	<li><strong><a href="/user/{{currentUser.username}}">{{currentUser.username}}</a></strong></li>
+        <li><a href="/user/edit">Edit profile</a></li>
+	<li><a href="/user/messages">Mes messages</a></li>	
+	<li><a href="/" class="log-out">Log Out</a></li>
+	</ul>
+	</div>
+	</div>
       {{/if}}
     </div>
   </div>

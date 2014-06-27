@@ -7,7 +7,6 @@
     <div class="champ control-group">
       <label>Your Email</label>
       <div class="controls"><input id="email" name="email" type="email" value="" required/></div>
-	<p class="help-block"></p>
     </div>
     <div class="separ">&nbsp;</div>
     <div class="ok">

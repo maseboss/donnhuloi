@@ -1,7 +1,3 @@
-Template.forgot.rendered = function(){
-        $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
-    };
-
 Template.forgot.events = {
   'click input[type=submit]': function(e){
     e.preventDefault();

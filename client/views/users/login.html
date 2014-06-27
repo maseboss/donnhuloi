@@ -1,19 +1,26 @@
 <template name="login">
 <div class="wrapper">
+<div class="post">
+<h3>Log in</h3> 
   <form>
+  <div class="form">
     <div class="control-group">
       <label>Username</label>
-      <div class="controls"><input id="username" type="text" value="" /></div>
+      <div class="controls"><input id="username" type="text" value="" pattern="^[a-z0-9_.]+$" required/></div>
     </div>
     <div class="control-group">
       <label>Password</label>
-      <div class="controls"><input id="password" type="password" value="" /></div>
+      <div class="controls"><input id="password" type="password" value="" required/></div>
     </div>
-    <div class="form-actions">
-      <a href="/forgot">Forgot password?</a>
-      <a href="/signup">Sign up?</a>
+    <div class="ok">
       <input type="submit" class="button" value="Log In" />
+      <input type="button" class="button" value="Create account" onclick="window.location.href = '/signup'"/>
     </div>
+    <div>
+      <a href="/forgot">Forgot password?</a>
+    </div>
+  </div>
   </form>
+</div>
 </div>
 </template>

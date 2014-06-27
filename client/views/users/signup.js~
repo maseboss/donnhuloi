@@ -1,4 +1,4 @@
-Template.signup.rendered = function(){
+Template.storyForm.rendered = function(){
     $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
 };
 

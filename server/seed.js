@@ -42,13 +42,13 @@ if ( Categories.find().count() === 0) {
   });
 
   Accounts.createUser({
-    username: "BuiThuyNgan",
+    username: "ngan",
     email: "ngan@test.com",
     password: "Susu"
   });
 
   Accounts.createUser({
-    username: "MathieuRIO",
+    username: "mathieu",
     email: "mathieu@test.com",
     password: "Susu"
   });

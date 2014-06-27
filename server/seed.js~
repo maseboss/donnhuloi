@@ -37,6 +37,10 @@ if ( Categories.find().count() === 0) {
     _id: "Others"
   });
 
+  Categories.insert({
+    _id: "Sex"
+  });
+
   Accounts.createUser({
     username: "BuiThuyNgan",
     email: "ngan@test.com",
