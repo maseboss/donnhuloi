@@ -12,9 +12,7 @@
 		<p class="texte">{{body}}</p>
 		<div class="avatar_container">
 			<a href="">
-				<object data="/{{username}}.jpg" width="28px" height="28px" type="image/jpg">
-					<img src="/defaut_none.jpg" width="28px" height="28px" title={{username}}>
-				</object>
+				<img src="/{{username}}.jpg" onerror="this.src='/defaut_none.jpg'" width="28px" height="28px" title={{username}}>
 			</a>
 		</div>
 		<div class="userinfos">

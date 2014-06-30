@@ -19,6 +19,10 @@ Meteor.publish('allStoriesCount', function(params) {
 
 });
 
+Meteor.publish('pendingStories', function() {
+  return Stories.find({published : null});
+});
+
 // Publish a single story
 
 Meteor.publish('singleStory', function(number) {

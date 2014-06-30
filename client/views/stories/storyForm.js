@@ -14,21 +14,22 @@ Template.storyForm.events = {
         // Don't postback
         e.preventDefault();
 
-        Meteor.call("getStoryCount", function(error,result) { 
+        //Meteor.call("getStoryCount", function(error,result) { 
 
 		var newStory = {
-		number : result,
+		number : null, //result,
 		body:tmpl.find("#update").value,
 		createdDate : new Date(),
 		category_id: tmpl.find("#cat").value,
-		published : true,
+		published : null,
 		countValidated: 0,
 		countDeserved: 0,
-		owner : tmpl.find("#username").value
+		owner : tmpl.find("#username").value,
+		ownerEmail : tmpl.find("#email").value
         	};
  
         	Stories.insert(newStory);
-	});
+	//});
 
 	alert('Thanks for your post');
 	Router.go('/stories');

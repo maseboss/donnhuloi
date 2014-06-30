@@ -1,0 +1,31 @@
+<template name="pendingStories">
+    <div class="wrapper">
+    {{#each this.stories}}
+
+<div class="post article">
+      <p>
+      	{{body}}
+      </p>
+
+      <div class="date">
+	<div class="right_part">
+		<p>
+			<span class="dyn-vote-j">
+				<a href="#" class="publishLink">Publish</a>
+			</span>
+			/
+			<span class="dyn-vote-t">
+				<a href="#" class="rejectLink">Reject</a>
+			</span>
+		</p>
+		<p>
+			{{formatDate createdDate}} - by {{ owner }}
+		</p>
+	</div>
+      </div>
+</div>
+
+    {{/each}}
+
+    </div>
+</template>

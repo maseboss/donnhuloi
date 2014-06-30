@@ -13,7 +13,7 @@
 	{{else}} 
         <div class="input_auteur control-group">
                 Username:
-	        <input id="username" name="username" minlength="6" maxlength="20" data-validation-maxlength-message="Name too long" data-validation-minlength-message="Name too short" required/>
+	        <input id="username" name="username" minlength="6" maxlength="20" data-validation-maxlength-message="Name too long" data-validation-minlength-message="Name too short" pattern="^[A-Za-z0-9_.]+$" data-validation-pattern-message="Username must be alphanumeric" required/>
 		<p class="help-block"></p>
         </div>
 	{{/if}}

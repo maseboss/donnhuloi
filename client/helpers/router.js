@@ -46,15 +46,17 @@ Router.map(function() {
     path: '/stories/:category?',
     waitOn: function () {
       var perPage = 10;
-      var filter = {};
+      var filter = {published : true};
       var sort = {createdDate:-1};
 
       if(this.params.category != null)
       {
 	if(this.params.category == 'top')
-		sort = { countValidated:-1 , createdDate:-1 }
+	{
+		sort = { countValidated:-1 , createdDate:-1 };
+	}
 	else
-		filter = {category_id : this.params.category};
+		filter = {category_id : this.params.category , published : true};
       }
 
       var options = {
@@ -86,6 +88,19 @@ Router.map(function() {
 	comments: Comments.find()
       }
     }
+  });
+
+  this.route('pendingStories', {
+    path: '/admin/pendingStories',
+    waitOn: function () {
+      return Meteor.subscribe('pendingStories');
+    },
+    data: function () {
+      return {
+        stories: Stories.find()
+      }
+    }
+
   });
 
   this.route('storyForm', {

@@ -36,7 +36,6 @@ Meteor.publish('categories', function() {
 Meteor.publish('allComments', function(number) {
   var story = Stories.findOne({ number : parseInt(number)});
   var comments = Comments.find({story_id : story._id});
-  console.log(comments.count());
   return comments;
 });
 

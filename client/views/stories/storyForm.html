@@ -16,6 +16,12 @@
 	        <input id="username" name="username" minlength="6" maxlength="20" data-validation-maxlength-message="Name too long" data-validation-minlength-message="Name too short" pattern="^[A-Za-z0-9_.]+$" data-validation-pattern-message="Username must be alphanumeric" required/>
 		<p class="help-block"></p>
         </div>
+
+        <div class="input_auteur control-group">
+                Email (optional):
+	        <input id="email" name="email" type="email"/>
+		<p class="help-block"></p>
+        </div>
 	{{/if}}
         <div class="input_cat">
                 Category:
@@ -26,6 +32,7 @@
 	</select>
 	
         </div>
+
 	<div class="control-group">
 		<textarea id="update" name="content" rows="6" minlength="50" maxlength="300" data-validation-maxlength-message="Story too long" data-validation-minlength-message="Story too short" required/>
 		<p class="help-block"></p>
